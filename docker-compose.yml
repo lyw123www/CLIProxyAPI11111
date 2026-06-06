@@ -10,9 +10,11 @@ services:
     expose:
       - "8317"
     volumes:
-      - ../files/config.yaml:/data/config.yaml
-      - cli-proxy-data:/data
+      - ../files/config.yaml:/data/config.yaml:ro
+      - cli-proxy-auths:/data/auths
+      - cli-proxy-static:/data/static
     restart: unless-stopped
 
 volumes:
-  cli-proxy-data:
+  cli-proxy-auths:
+  cli-proxy-static:
